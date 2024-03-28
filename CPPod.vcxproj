@@ -127,10 +127,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="关系运算符重载.cpp" />
+    <ClCompile Include="函数调用运算符重载.cpp" />
     <ClCompile Include="加号运算符重载.cpp" />
     <ClCompile Include="左移运算符重载.cpp" />
     <ClCompile Include="赋值运算符重载.cpp" />
     <ClCompile Include="递增运算符重载.cpp" />
+    <ClCompile Include="面向对象继承01.cpp" />
+    <ClCompile Include="面向对象继承02.cpp" />
+    <ClCompile Include="面向对象继承03.cpp" />
+    <ClCompile Include="面向对象继承04.cpp" />
+    <ClCompile Include="面向对象继承05.cpp" />
+    <ClCompile Include="面向对象继承06.cpp" />
+    <ClCompile Include="面向对象继承07.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

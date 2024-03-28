@@ -27,5 +27,32 @@
     <ClCompile Include="赋值运算符重载.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="关系运算符重载.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="函数调用运算符重载.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面向对象继承01.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面向对象继承02.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面向对象继承03.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面向对象继承04.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面向对象继承05.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面向对象继承06.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面向对象继承07.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
