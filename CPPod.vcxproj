@@ -131,8 +131,11 @@
     <ClCompile Include="函数调用运算符重载.cpp" />
     <ClCompile Include="加号运算符重载.cpp" />
     <ClCompile Include="左移运算符重载.cpp" />
+    <ClCompile Include="神经网络01-梯度向后传播法.cpp" />
     <ClCompile Include="赋值运算符重载.cpp" />
     <ClCompile Include="递增运算符重载.cpp" />
+    <ClCompile Include="面向对象多态01.cpp" />
+    <ClCompile Include="面向对象多态02.cpp" />
     <ClCompile Include="面向对象继承01.cpp" />
     <ClCompile Include="面向对象继承02.cpp" />
     <ClCompile Include="面向对象继承03.cpp" />

@@ -54,5 +54,14 @@
     <ClCompile Include="面向对象继承07.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="面向对象多态01.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="神经网络01-梯度向后传播法.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面向对象多态02.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
