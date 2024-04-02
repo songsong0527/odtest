@@ -63,5 +63,22 @@
     <ClCompile Include="面向对象多态02.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="面向对象多态03.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="神经网络02-逻辑回归SigMod函数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="文件操作01.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="神经网络03-综合用法.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="神经网络03-头文件.hpp">
+      <Filter>源文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -26,14 +26,14 @@
 //		{0,128,2561},
 //		{2,128,1561},
 //		{3,128,1061},
-//		//{0,256,5121},
-//		//{1,256,4621},
-//		//{3,512,8741}   加上这三个参数后，结果为无穷大
+//		{0,256,5121},
+//		{1,256,4621},
+//		{3,512,8741}   //加上这三个参数后，结果为无穷大
 //	};
 //
 //	//求解方法 《梯度向后传播法》
 //
-//	float lr = 0.0001;//学习率
+//	float lr = 0.000001f;//学习率
 //
 //	srand(time(0));
 //
@@ -43,12 +43,14 @@
 //	//y = 0.5f * x1 + 0.8f * x2 + 1.5 + rand() % 10 / 100.0f
 //	for (int i = 0; i < 10000000; i++)
 //	{
-//		int rn = rand() % 3;
+//		int rn = rand() % 6;
 //		Sample sample = samples[rn];
 //		//float y = a * sample.year + b;
 //		float y = a * sample.storage + b * sample.year + c /*+ 1.5 + rand() % 10 / 100.0f*/;
 //		//损失值
 //		float loss = sample.price - y;
+// 
+// 
 //		////对a求偏导（梯度值）*损失值
 //		float da = sample.storage * loss; //d = delta
 //		a += da * lr;
