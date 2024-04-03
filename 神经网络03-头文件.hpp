@@ -108,7 +108,6 @@ public:
 		for (int i = 0; i < ninp  ; i++)
 		{
 			dx.push_back(w[i] * dy[0]);
-			w[i] += samplex[i] * dy[0];
 		}
 		return dx;
 	}

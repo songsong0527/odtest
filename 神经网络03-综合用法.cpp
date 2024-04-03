@@ -12,7 +12,7 @@ int main() {
 	float x1;
 	float x2;
 	float y;
-	FILE* fp = fopen("D:\\LocalRepository\\CPPod\\studentscore.txt", "r");//以只读模式打开文件
+	FILE* fp = fopen("studentscore.txt", "r");//以只读模式打开文件
 	while (true)
 	{
 		//Sample sample;
