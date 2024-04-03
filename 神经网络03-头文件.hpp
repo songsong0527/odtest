@@ -39,7 +39,7 @@ public:
 	virtual vector<float> Backward(vector<float> dy)
 	{
 		vector<float> dx;
-		for (int i = 0; i < output.size(); ++i)
+		for (int i = 0; i < output.size(); i++)
 		{
 			float d = output[i] * (1.0f - output[i]);//(ys * (1.0f - ys))
 			dx.push_back(dy[i] * d);
@@ -69,12 +69,11 @@ public:
 	/// <param name="n"></param>
 	FullConnect(int ninp/*输入个数*/, int n/*神经元个数*/)
 	{
-		lr = 0.0001;
 		w.resize(ninp * n);
 		b.resize(n);
 		this->ninp = ninp;
 		this->n = n;
-
+		srand(time(0));
 		for (float& wi : w)
 		{
 			wi = rand() % 1000 / 1000.0f;
@@ -104,62 +103,46 @@ public:
 
 	virtual vector<float> Backward(vector<float> dy)
 	{
-		vector<float> dx;
-		for (int i = 0; i < ninp  ; i++)
+		vector<float> dx(ninp);
+		dw.resize(ninp * n);
+		db.resize(n);
+		for (int i = 0; i < n; i++)
 		{
-			dx.push_back(w[i] * dy[0]);
-			w[i] += samplex[i] * dy[0];
+			float v = 0;
+			for (int j = 0; j < ninp; ++j)
+			{
+				dx[i] += samplex[j] * dy[i];
+				dw[i * ninp + j] = samplex[j] * dy[i];
+			}
+			db[i] += dy[i];
 		}
 		return dx;
 	}
-
 	virtual void Update(float lr)
 	{
-		for (float& wi : w) {
-			wi += wi * lr;
+		for (int i = 0; i < ninp * n; ++i)
+		{
+			w[i] += dw[i] * lr;
+		}
+		for (int i = 0; i < n; i++)
+		{
+			b[i] += db[i] * lr;
 		}
 	}
 
-private:
+	vector< float> Getw() {
+		return w;
+	}
+	vector< float> Getb() {
+		return b;
+	}
 
+
+private:
+	vector<float> dw, db;
 	vector<float> w, b;
 	vector<float> samplex;
 	int n;
 	int ninp;
-	int lr;
+	float dy;
 };
-
-
-//void ANN()
-//{
-//
-//	Layer* layer1 = new FullConnect(2, 2);
-//	Layer* layer2 = new Sigmoid();
-//	Layer* layer3 = new FullConnect(2, 1);
-//	Layer* layer4 = new Sigmoid();
-//
-//
-//	for (size_t i = 0; i < 10000; i++)
-//	{
-//		vector<float> x = { 0.6, 0.7 };
-//		auto r = layer1->Forward(x);
-//		r = layer2->Forward(r);
-//		r = layer3->Forward(r);
-//		r = layer4->Forward(r);//传递后得到的ys值
-//
-//		//loss=样本y值减去ys
-//		float loss = 1 - r[0];
-//
-//		vector<float> dy = { loss };
-//
-//		auto dx = layer4->Backward(dy);
-//		dx = layer3->Backward(dx);
-//		dx = layer2->Backward(dx);
-//		dx = layer1->Backward(dx);
-//
-//
-//
-//		layer1->Update();
-//		//...
-//	}
-//}
