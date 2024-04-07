@@ -6,14 +6,15 @@ using namespace std;
 
 int main()
 {
-	float lr = 0.0000001f;
+	float lr = 0.00001f;
 	struct Sample
 	{
 		int lable; //0-9
 		unsigned char pixes[28 * 28];
 	};
 
-	FILE* fp = fopen("D:/LocalRepository/CPPod/train68333", "rb");
+
+	FILE* fp = fopen("E:/C++demo/train68333", "rb");
 	vector<Sample> samples;
 	samples.resize(68333);
 	fread(samples.data(), sizeof(Sample), 68333, fp);
@@ -77,19 +78,17 @@ int main()
 	}
 
 
-	FILE* testfp = fopen("D:/LocalRepository/CPPod/test659", "rb");
+	FILE* testfp = fopen("E:/C++demo/test659", "rb");
 	vector<Sample> test;
 	test.resize(659);
 	fread(test.data(), sizeof(Sample), 659, testfp);
 	fclose(testfp);
 	vector<float> testx;
-	vector<float> testy;
 	int pass = 0;
 
-	for (int j = 210; j < 659; j++)
+	for (int j = 0; j < 659; j++)
 	{
 		testx.clear();
-		testy.clear();
 		for (int i = 0; i < 28 * 28; i++)
 		{
 			float temp = static_cast<float>(test[j].pixes[i]);
@@ -102,8 +101,17 @@ int main()
 		yss = layer4->Forward(yss);
 		yss = layer5->Forward(yss);
 		yss = layer6->Forward(yss);
-		int a= test[j].lable;
+
+		auto max = max_element(yss.begin(), yss.end());
+		int maxIndex = std::distance(yss.begin(), max);
+		if (maxIndex==test[j].lable)
+		{
+			pass++;
+		}
 	}
+		float rat;
+		rat = pass / 659.0f;
+		cout << rat << endl; 
 }
 
 //动量参数

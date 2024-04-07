@@ -28,7 +28,7 @@
 //	float x9;
 //	float y;
 //	float lr = 0.00001f;
-//	FILE* fp = fopen("D:\\LocalRepository\\CPPod\\cancer.txt", "r");//以只读模式打开文件
+//	FILE* fp = fopen("E:\\C++demo\\cancer.txt", "r");//以只读模式打开文件
 //	while (true)
 //	{
 //		//Sample sample;

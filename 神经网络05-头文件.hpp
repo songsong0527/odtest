@@ -29,7 +29,7 @@ class ReLu :public Layer {
 		vector<float> dx;
 		for (int i = 0; i < output.size(); i++)
 		{
-			float d = dy[i] > 0 ? 1 : 0;//激活函数导数值
+			float d = dy[i] > 0 ? 1 : 0;//ReLu函数导数值
 			dx.push_back(dy[i] * d);
 		}
 		return dx;
@@ -146,7 +146,7 @@ public:
 			for (int j = 0; j < ninp; ++j)
 			{
 				dx[j] += samplex[j] * dy[i];
-				dw[i * ninp + j] += samplex[j] * dy[i];
+				dw[i * ninp + j] += -samplex[j] * dy[i];
 			}
 			db[i] += dy[i];
 		}
@@ -173,5 +173,4 @@ private:
 	vector<float> samplex;
 	int n;
 	int ninp;
-	float dy;
 };
