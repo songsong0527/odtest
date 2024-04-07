@@ -78,12 +78,21 @@
     <ClCompile Include="神经网络04-综合用法.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="神经网络05-图像识别.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="源.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="神经网络03-头文件.hpp">
       <Filter>源文件</Filter>
     </ClInclude>
     <ClInclude Include="神经网络04-头文件.hpp">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="神经网络05-头文件.hpp">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>

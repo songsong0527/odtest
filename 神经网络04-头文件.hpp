@@ -1,5 +1,4 @@
 //#include <vector>
-//#include <iostream>
 //using namespace std;
 //
 //class Layer
@@ -10,51 +9,70 @@
 //	virtual vector<float> Forward(vector<float> input) = 0;
 //	virtual vector<float> Backward(vector<float> input) = 0;
 //	virtual void Update(float lr) = 0;
+//
 //};
 //
-//class SigMoid :public Layer {
+//
+//class Sigmoid : public Layer
+//{
 //public:
-//	virtual vector<float> Forward(vector<float> input) {
+//	/// <summary>
+//	/// 返回经过sigmod函数后的ys值
+//	/// </summary>
+//	/// <param name="y">float y = a1 * sample.x1 + a2 * sample.x2 + b; </param>
+//	/// <returns></returns>
+//	virtual vector<float> Forward(vector<float> y)
+//	{
 //		output.clear();
-//		for (float inputi : input)
+//		for (float yi : y)
 //		{
-//			float ys = 1.0f / (1.0f + expf(-inputi));//sigmod函数
+//			float ys = 1.0f / (1.0f + expf(-yi));//sigmod函数
 //			output.push_back(ys);
 //		}
-//		return output;
+//		return output;//返回两个ys值
 //	}
-//
-//
-//	virtual vector<float> Backward(vector<float> input) {
-//
+//	/// <summary>
+//	/// 返回dy值
+//	/// </summary>
+//	/// <param name="loss">损失值，样本y值减去ys</param>
+//	/// <returns></returns>
+//	virtual vector<float> Backward(vector<float> dy)
+//	{
 //		vector<float> dx;
 //		for (int i = 0; i < output.size(); i++)
 //		{
 //			float d = output[i] * (1.0f - output[i]);//(ys * (1.0f - ys))
-//			dx.push_back(input[i] * d);
+//			dx.push_back(dy[i] * d);
 //		}
 //		return dx;
 //	}
-//
-//
-//
-//	virtual void Update(float lr) {
+//	virtual void Update(float lr)
+//	{
 //
 //	}
 //private:
-//	vector<float> output;
+//	vector<float> output;//ys值
 //};
 //
-////y=x1*w1+x2*w2+b;
 //
-//class FullConnect :public Layer {
+//
+///// <summary>
+///// 
+///// </summary>
+//class FullConnect : public Layer
+//{
 //public:
+//	/// <summary>
+//	/// 构造函数，初始化w和b的值（a和b的值）
+//	/// </summary>
+//	/// <param name="ninp"></param>
+//	/// <param name="n"></param>
 //	FullConnect(int ninp/*输入个数*/, int n/*神经元个数*/)
 //	{
-//		this->ninp = ninp;
-//		this->n = n;
 //		w.resize(ninp * n);
 //		b.resize(n);
+//		this->ninp = ninp;
+//		this->n = n;
 //		srand(time(0));
 //		for (float& wi : w)
 //		{
@@ -65,56 +83,58 @@
 //			bi = 0;
 //		}
 //	}
-//	virtual vector<float> Forward(vector<float> input) {
-//		samplex = input;
+//
+//	virtual vector<float> Forward(vector<float> x)
+//	{
+//		samplex = x;//将sample中的x值存储起来
 //		vector<float> y;
 //		for (int i = 0; i < n; i++)
 //		{
 //			float v = 0;
 //			for (int j = 0; j < ninp; j++)
 //			{
-//				v += w[i * ninp + j] * input[j];
+//				v += w[i * ninp + j] * x[j];
 //			}
 //			v += b[i];
 //			y.push_back(v);
 //		}
-//		output = y;
-//		return y;
+//		return y;//返回float y = w1 * sample.x1 + w2 * sample.x2 +b
 //	}
-//	virtual vector<float> Backward(vector<float> input) {
 //
+//	virtual vector<float> Backward(vector<float> dy)
+//	{
 //		vector<float> dx(ninp);
 //		dw.resize(ninp * n);
 //		db.resize(n);
 //		for (int i = 0; i < n; i++)
 //		{
 //			float v = 0;
-//			for (int j = 0; j < ninp; j++)
+//			for (int j = 0; j < ninp; ++j)
 //			{
-//				dx[j] += w[j] * input[i];
-//				dw[i * ninp + j] = this->output[i] * input[i];
+//				dx[i] += samplex[j] * dy[i];
+//				dw[i * ninp + j] = samplex[j] * dy[i];
 //			}
-//			db[i] += input[i];
+//			db[i] += dy[i];
 //		}
 //		return dx;
 //	}
-//	virtual void Update(float lr) {
-//		for (int i = 0; i < b.size(); i++)
-//		{
-//			b[i] += db[i] * lr;
-//		}
-//		for (int i = 0; i < w.size(); i++)
+//	virtual void Update(float lr)
+//	{
+//		for (int i = 0; i < ninp * n; ++i)
 //		{
 //			w[i] += dw[i] * lr;
 //		}
+//		for (int i = 0; i < n; i++)
+//		{
+//			b[i] += db[i] * lr;
+//		}
 //	}
 //
-//
-//
-//
 //private:
-//	int n;//神经元个数
-//	int ninp;//输入个数
-//	vector<float> w, b, dw, db, dy, samplex, output;//权重，偏置值
-//
+//	vector<float> dw, db;
+//	vector<float> w, b;
+//	vector<float> samplex;
+//	int n;
+//	int ninp;
+//	float dy;
 //};
