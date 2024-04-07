@@ -135,6 +135,7 @@
     <ClCompile Include="神经网络01-梯度向后传播法.cpp" />
     <ClCompile Include="神经网络02-逻辑回归SigMod函数.cpp" />
     <ClCompile Include="神经网络03-综合用法.cpp" />
+    <ClCompile Include="神经网络04-综合用法.cpp" />
     <ClCompile Include="赋值运算符重载.cpp" />
     <ClCompile Include="递增运算符重载.cpp" />
     <ClCompile Include="面向对象多态01.cpp" />
@@ -150,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="神经网络03-头文件.hpp" />
+    <ClInclude Include="神经网络04-头文件.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

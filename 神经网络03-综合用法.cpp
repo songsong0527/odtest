@@ -1,6 +1,7 @@
 #include <vector>
 #include <iostream>
 #include "神经网络03-头文件.hpp"
+
 #pragma warning(disable:4996)
 using namespace  std;
 
@@ -12,7 +13,8 @@ int main() {
 	float x1;
 	float x2;
 	float y;
-	FILE* fp = fopen("studentscore.txt", "r");//以只读模式打开文件
+	float lr = 0.0001f;
+	FILE* fp = fopen("D:\\LocalRepository\\CPPod\\studentscore.txt", "r");//以只读模式打开文件
 	while (true)
 	{
 		//Sample sample;
@@ -27,7 +29,7 @@ int main() {
 
 	Layer* layer1 = new FullConnect(2, 2);
 	Layer* layer2 = new Sigmoid();
-	Layer* layer3 = new FullConnect(2, 1);
+	FullConnect* layer3 = new FullConnect(2, 1);
 	Layer* layer4 = new Sigmoid();
 
 
@@ -43,16 +45,33 @@ int main() {
 			ys = layer4->Forward(ys);//得到了经过两层后的ys值
 			float loss = sampley[j] - ys[0];//loss
 			vector<float> dy = { loss };
+
 			//向后传播
 
 			auto dx = layer4->Backward(dy);
 			dx = layer3->Backward(dx);
 			dx = layer2->Backward(dx);
 			dx = layer1->Backward(dx);
-			layer1->Update(0.0001f);
+
+			layer1->Update(lr);
+			layer3->Update(lr);
 		}
 	}
 
+	int pass = 0;
+	for (int j = 0; j < 100; j++)
+	{
+		vector<float> test = {samplex1[j],samplex2[j]};
+		auto ys = layer1->Forward(test);
+		ys = layer2->Forward(ys);
+		ys = layer3->Forward(ys);
+		ys = layer4->Forward(ys);//得到了经过两层后的ys值
 
-
+		if (abs(ys[0] - sampley[j]) <= 0.5) {
+			pass++;
+		}
+	}
+	float rat;
+	rat = pass / 100.0f;
+	cout << rat << endl;
 }
