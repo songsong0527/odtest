@@ -39,7 +39,6 @@ class ReLu :public Layer {
 	}
 private:
 	vector<float> output;//ysֵ
-
 };
 
 
@@ -114,6 +113,8 @@ public:
 		{
 			bi = 0;
 		}
+		dw.resize(ninp * n);
+		db.resize(n);
 	}
 
 
@@ -138,15 +139,13 @@ public:
 	virtual vector<float> Backward(vector<float> dy)
 	{
 		vector<float> dx(ninp);
-		dw.resize(ninp * n);
-		db.resize(n);
 		for (int i = 0; i < n; ++i)
 		{
 			float v = 0;
 			for (int j = 0; j < ninp; ++j)
 			{
-				dx[j] += samplex[j] * dy[i];
-				dw[i * ninp + j] += -samplex[j] * dy[i];
+				dx[j] += w[i * ninp + j] * dy[i];
+				dw[i * ninp + j] += samplex[j] * dy[i];
 			}
 			db[i] += dy[i];
 		}
@@ -164,6 +163,14 @@ public:
 		for (int i = 0; i < n; i++)
 		{
 			b[i] += db[i] * lr;
+		}
+		for (int i = 0; i < ninp * n; ++i)
+		{
+			dw[i] = 0;
+		}
+		for (int i = 0; i < n; i++)
+		{
+			db[i] = 0;
 		}
 	}
 
