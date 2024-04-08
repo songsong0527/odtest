@@ -33,31 +33,27 @@ int main()
 	vector<float> x;
 	vector<float> y;
 	int avgcout = 0;
-	vector <float> avgdy;
-
-	for (int j = 0; j < 68333; j++)
+	vector <float> avgdy;	
+	//std::random_device rd;
+	//std::mt19937 gen(rd());
+	//// 创建一个分布函数，定义随机数的范围
+	//std::uniform_int_distribution<> dis(0, 68332);
+	for (int j = 0; j < 683330; j++)
 	{
-		for (int idx = 0; idx < 4; idx++)
+		for (int idx = 0; idx < 1; idx++)
 		{
 			int randNumber;
 			srand(time(0));
 			randNumber = rand() * rand() % 68333;
-
-			//	// 创建一个随机数生成器
-			//std::random_device rd;
-			//std::mt19937 gen(rd());
-
-			//// 创建一个分布函数，定义随机数的范围
-			//std::uniform_int_distribution<> dis(0, 68332);
-
-			//// 生成随机数
-			//int randNumber = dis(gen);
+			// 生成随机数
+			//randNumber = dis(gen);
 
 			y.clear();
 			for (int i = 0; i < 28 * 28; i++)
 			{
 				float temp = static_cast<float>(samples[randNumber].pixes[i]);
 				temp /= 255.0f;
+				temp -= 0.5f;
 				x.push_back(temp);
 			}
 			//向前传播
