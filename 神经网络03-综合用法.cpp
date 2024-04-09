@@ -1,6 +1,6 @@
 //#include <vector>
 //#include <iostream>
-//#include "Éñ¾­ÍøÂç03-Í·ÎÄ¼þ.hpp"
+//#include "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½03-Í·ï¿½Ä¼ï¿½.hpp"
 //#pragma warning(disable:4996)
 //using namespace  std;
 //
@@ -28,7 +28,7 @@
 //	float x9;
 //	float y;
 //	float lr = 0.00001f;
-//	FILE* fp = fopen("E:\\C++demo\\cancer.txt", "r");//ÒÔÖ»¶ÁÄ£Ê½´ò¿ªÎÄ¼þ
+//	FILE* fp = fopen("E:\\C++demo\\cancer.txt", "r");//ï¿½ï¿½Ö»ï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½Ä¼ï¿½
 //	while (true)
 //	{
 //		//Sample sample;
@@ -77,17 +77,17 @@
 //		for (int j = 0; j < 100; j++)
 //		{
 //			vector<float> x = { samplex1[j],samplex2[j], samplex3[j] ,samplex4[j] ,samplex5[j] ,samplex6[j] ,samplex7[j] ,samplex8[j] ,samplex9[j] };
-//			//ÏòÇ°´«²¥
+//			//ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½
 //			auto ys = layer1->Forward(x);
 //			ys = layer2->Forward(ys);
 //			ys = layer3->Forward(ys);
 //			ys = layer4->Forward(ys);
 //			ys = layer5->Forward(ys);
-//			ys = layer6->Forward(ys);//µÃµ½ÁË¾­¹ýÁ½²ãºóµÄysÖµ
+//			ys = layer6->Forward(ys);//ï¿½Ãµï¿½ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ysÖµ
 //			float loss = sampley[j] - ys[0];//loss
 //			vector<float> dy = { loss };
 //
-//			//Ïòºó´«²¥
+//			//ï¿½ï¿½ó´«²ï¿½
 //
 //			auto dx = layer6->Backward(dy);
 //			dx = layer5->Backward(dx);
@@ -111,7 +111,7 @@
 //		ys = layer3->Forward(ys);
 //		ys = layer4->Forward(ys);
 //		ys = layer5->Forward(ys);
-//		ys = layer6->Forward(ys);//µÃµ½ÁË¾­¹ýÁ½²ãºóµÄysÖµ
+//		ys = layer6->Forward(ys);//ï¿½Ãµï¿½ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ysÖµ
 //		if (abs(ys[0] - sampley[j]) <= 0.5) {
 //			pass++;
 //		}

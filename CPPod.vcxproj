@@ -70,6 +70,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>D:\nvxlib\api;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\nvxlib\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -118,12 +122,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <Optimization>Disabled</Optimization>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libnvx.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -138,6 +145,7 @@
     <ClCompile Include="神经网络03-综合用法.cpp" />
     <ClCompile Include="神经网络04-综合用法.cpp" />
     <ClCompile Include="神经网络05-图像识别.cpp" />
+    <ClCompile Include="神经网络07-库函数调用.cpp" />
     <ClCompile Include="赋值运算符重载.cpp" />
     <ClCompile Include="递增运算符重载.cpp" />
     <ClCompile Include="面向对象多态01.cpp" />
@@ -155,6 +163,7 @@
     <ClInclude Include="神经网络03-头文件.hpp" />
     <ClInclude Include="神经网络04-头文件.hpp" />
     <ClInclude Include="神经网络05-头文件.hpp" />
+    <ClInclude Include="神经网络07-头文件.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

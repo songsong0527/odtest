@@ -1,6 +1,6 @@
 //#include <vector>
 //#include <iostream>
-//#include "Éñ¾­ÍøÂç04-Í·ÎÄ¼þ.hpp"
+//#include "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½04-Í·ï¿½Ä¼ï¿½.hpp"
 ////#include "ann(1).hpp"
 //#pragma warning(disable:4996)
 //using namespace  std;
@@ -18,7 +18,7 @@
 //	float x2;
 //	float y;
 //	float lr = 0.01f;
-//	FILE* fp = fopen("D:\\LocalRepository\\CPPod\\studentscore.txt", "r");//ÒÔÖ»¶ÁÄ£Ê½´ò¿ªÎÄ¼þ
+//	FILE* fp = fopen("D:\\LocalRepository\\CPPod\\studentscore.txt", "r");//ï¿½ï¿½Ö»ï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½Ä¼ï¿½
 //	while (true)
 //	{
 //		Sample sample;
@@ -42,16 +42,16 @@
 //		for (int j = 0; j < 100; j++)
 //		{
 //			vector<float> x = { samplex1[j],samplex2[j] };
-//			//ÏòÇ°´«²¥
+//			//ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½
 //			auto ys = layer1->Forward(x);
 //			ys = layer2->Forward(ys);
 //			ys = layer3->Forward(ys);
-//			ys = layer4->Forward(ys);//µÃµ½ÁË¾­¹ýÁ½²ãºóµÄysÖµ
+//			ys = layer4->Forward(ys);//ï¿½Ãµï¿½ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ysÖµ
 //			_ys.push_back(ys[0]);
 //			float loss = sampley[j] - ys[0];//loss
 //			vector<float> dy = { loss };
 //
-//			//Ïòºó´«²¥
+//			//ï¿½ï¿½ó´«²ï¿½
 //
 //			auto dx = layer4->Backward(dy);
 //			dx = layer3->Backward(dx);
@@ -69,7 +69,7 @@
 //		auto ys = layer1->Forward(test);
 //		ys = layer2->Forward(ys);
 //		ys = layer3->Forward(ys);
-//		ys = layer4->Forward(ys);//µÃµ½ÁË¾­¹ýÁ½²ãºóµÄysÖµ
+//		ys = layer4->Forward(ys);//ï¿½Ãµï¿½ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ysÖµ
 //		if (abs(ys[0] - sampley[j]) <= 0.5) {
 //			pass++;
 //		}
