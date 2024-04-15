@@ -1,8 +1,8 @@
-//#include"神经网络05-头文件.hpp"
 //#include <iostream>
 //#include <vector>
 //#include <random>
 //#include "nvx.h"
+//#include"神经网络08-头文件.hpp"
 //
 //#pragma warning(disable:4996)
 //using namespace std;
@@ -90,7 +90,7 @@
 //				avgdy.clear();
 //				std::cout << "----------------------------" << endl << sum / 1000 << endl;
 //			}
-//		
+//
 //			auto dx = layer6->Backward(dy);
 //			dx = layer5->Backward(dx);
 //			dx = layer4->Backward(dx);
@@ -98,7 +98,7 @@
 //			dx = layer2->Backward(dx);
 //			dx = layer1->Backward(dx);
 //		}
-//	
+//
 //		layer1->Update(lr);
 //		layer3->Update(lr);
 //		layer5->Update(lr);

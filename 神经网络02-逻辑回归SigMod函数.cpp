@@ -25,7 +25,7 @@
 //	vector<Sample> samples;
 //
 //	Sample test;
-//	FILE* fp = fopen("D:\\LocalRepository\\CPPod\\cancer.txt", "r");//ÒÔÖ»¶ÁÄ£Ê½´ò¿ªÎÄ¼þ
+//	FILE* fp = fopen("D:\\LocalRepository\\CPPod\\cancer.txt", "r");//ï¿½ï¿½Ö»ï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½Ä¼ï¿½
 //	while (true)
 //	{
 //		MyID myId;
@@ -77,14 +77,14 @@
 //		float da8 = 0;
 //		float da9 = 0;
 //		float db = 0;
-//		//·ÀÖ¹¾Ö²¿×îÓÅ
+//		//ï¿½ï¿½Ö¹ï¿½Ö²ï¿½ï¿½ï¿½ï¿½ï¿½
 //		for (int j = 0; j < 682; j++)
 //		{
 //			Sample sample = samples[j];
 //			float y = a1 * sample.x1 + a2 * sample.x2 + a3 * sample.x3 + a4 * sample.x4 +
 //				a5 * sample.x5 + a6 * sample.x6 + a7 * sample.x7 + a8 * sample.x8 + a9 * sample.x9 + b;
-//			float ys = 1.0f / (1.0f + expf(-y));//sigmodº¯Êý(¼¤»îº¯Êý)
-//			float loss = sample.y - ys;//ËðÊ§Öµ
+//			float ys = 1.0f / (1.0f + expf(-y));//sigmodï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½îº¯ï¿½ï¿½)
+//			float loss = sample.y - ys;//ï¿½ï¿½Ê§Öµ
 //			//float dy = (y * (1.0f - y)) * loss;
 //			float dy = (ys * (1.0f - ys)) * loss;
 //			da1 += sample.x1 * dy;
@@ -112,8 +112,8 @@
 //	//Sample test02;
 //	//test02 = samples[2];
 //	//float y = a1 * test.x1 + a2 * test.x2 + a3 * test.x3 + a4 * test.x4 + a5 * test.x5 + a6 * test.x6
-//	//	+ a7 * test.x7 + a8 * test.x8 + a9 * test.x9 + b;//×îºóÒ»¸öÑù±¾£¬½á¹ûÕýÈ·
-//	/*float y = a1 * 0.5 + a2 * 0.4 + a3 * 0.4 + a4 * 0.5 + a5 * 0.7 + a6 * 1.0 + a7 * 0.3 + a8 * 0.2 + a9 * 0.1 + b;*///µÚ¶þ¸öÑù±¾£¬½á¹û´íÎó
+//	//	+ a7 * test.x7 + a8 * test.x8 + a9 * test.x9 + b;//ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·
+//	/*float y = a1 * 0.5 + a2 * 0.4 + a3 * 0.4 + a4 * 0.5 + a5 * 0.7 + a6 * 1.0 + a7 * 0.3 + a8 * 0.2 + a9 * 0.1 + b;*///ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //	int pass = 0;
 //	for (int j = 0; j < 682; j++)
 //	{
