@@ -3,26 +3,26 @@
 //
 //class AbstractDrinking {
 //public:
-//	virtual void Boil() = 0;//ÖóË®
-//	virtual void Brew() = 0;//³åÅÝ
-//	virtual void PourWater() = 0;//µ¹Ë®
-//	virtual void PutSomething() = 0;//·ÅÈëÒ»Ð©¶«Î÷
+//	virtual void Boil() = 0;//ï¿½ï¿½Ë®
+//	virtual void Brew() = 0;//ï¿½ï¿½ï¿½ï¿½
+//	virtual void PourWater() = 0;//ï¿½ï¿½Ë®
+//	virtual void PutSomething() = 0;//ï¿½ï¿½ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½ï¿½
 //};
 //
 //class Coffee :public AbstractDrinking {
 //public:
 //	 void Boil() {
-//		 cout << "ÖóÅ©·òÉ½Èª" << endl;
-//	};//ÖóË®
+//		 cout << "ï¿½ï¿½Å©ï¿½ï¿½É½Èª" << endl;
+//	};//ï¿½ï¿½Ë®
 //	 void Brew() {
-//		 cout << "³åÅÝ¿§·È·Û" << endl;
-//	};//³åÅÝ
+//		 cout << "ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½È·ï¿½" << endl;
+//	};//ï¿½ï¿½ï¿½ï¿½
 //	 void PourWater() {
-//		 cout << "µ¹ÈëÐ¡±­ÖÐ" << endl;
-//	};//µ¹Ë®
+//		 cout << "ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½" << endl;
+//	};//ï¿½ï¿½Ë®
 //	 void PutSomething() {
-//		 cout << "·ÅÈëÄÌÓÍ" << endl;
-//	};//·ÅÈëÒ»Ð©¶«Î÷
+//		 cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << endl;
+//	};//ï¿½ï¿½ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½ï¿½
 //};
 //
 //void test01(AbstractDrinking &base) {
@@ -30,7 +30,7 @@
 //	base.Brew();
 //	base.PourWater();
 //	base.PutSomething();
-//	cout << "test01Êä³öÄÚÈÝ" <<endl<< &base << endl;
+//	cout << "test01ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" <<endl<< &base << endl;
 //}
 //
 //void test02(AbstractDrinking *base) {
@@ -38,7 +38,7 @@
 //	base->Brew();
 //	base->PourWater();
 //	base->PutSomething();
-//	cout <<"test02Êä³öÄÚÈÝ"<<endl<< base << endl << &base << endl;
+//	cout <<"test02ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"<<endl<< base << endl << &base << endl;
 //}
 //
 //
@@ -46,6 +46,6 @@
 //	Coffee coffee;
 //	test01(coffee);
 //	test02(&coffee);
-//	cout<<"mainº¯ÊýÊä³öÄÚÈÝ" <<endl<< &coffee << endl;
+//	cout<<"mainï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" <<endl<< &coffee << endl;
 //	system("pause");
 //}

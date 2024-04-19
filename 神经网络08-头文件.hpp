@@ -1,4 +1,3 @@
-//#pragma once
 //#include <vector>
 //#include <iostream>
 //using namespace std;
@@ -15,6 +14,8 @@
 //};
 //
 //class FullConnect :public Layer {
+//
+//public:
 //	FullConnect(int ninput, int neurenumber) {
 //		this->ninput = ninput;
 //		this->neurenumber = neurenumber;
@@ -53,14 +54,17 @@
 //		return y;
 //	}
 //	virtual vector<float> Backward(vector<float> dx) {
+//
 //		for (int i = 0; i < neurenumber; i++)
 //		{
 //			for (int j = 0; j < ninput; j++)
 //			{
+//				dxx[i] += dx[i] * forwardInput[j];
 //				dw[i * ninput + j] += dx[i] * forwardInput[j];
 //			}
 //			db[i] += dx[i];
 //		}
+//		return dxx;
 //	}
 //	virtual void Update(float lr) {
 //		for (int i = 0; i < ninput * neurenumber; ++i)
@@ -81,7 +85,7 @@
 //		}
 //	}
 //private:
-//	vector<float> dw, db, w, b, y, forwardInput, backwardInput;
+//	vector<float> dw, db, w, b, y, forwardInput, backwardInput, dxx;
 //	int ninput, neurenumber;
 //};
 //
@@ -109,4 +113,27 @@
 //	vector<float> ys, dy;
 //};
 //
-//class Sigmoid
+//class Sigmoid :public Layer {
+//	virtual vector<float> Forward(vector<float> y) {
+//		for (float& yi : y) {
+//			yi = 1.0f / (1.0f + expf(-yi));
+//		}
+//		ys = y;
+//		return ys;
+//	}
+//	virtual vector<float> Backward(vector<float> loss) {
+//		vector<float> dx;
+//		for (int i = 0; i < loss.size(); i++)
+//		{
+//			float d = ys[i] * (1.0f - ys[i]);//(ys * (1.0f - ys))
+//			dx.push_back(dy[i] * d);
+//
+//		}
+//		return dx;
+//	}
+//	virtual void Update(float lr) {
+//
+//	}
+//private:
+//	vector<float> ys, dy;
+//};

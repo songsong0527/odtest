@@ -17,7 +17,7 @@
 //{
 //public:
 //	/// <summary>
-//	/// ·µ»Ø¾­¹ýsigmodº¯ÊýºóµÄysÖµ
+//	/// ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½sigmodï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ysÖµ
 //	/// </summary>
 //	/// <param name="y">float y = a1 * sample.x1 + a2 * sample.x2 + b; </param>
 //	/// <returns></returns>
@@ -26,15 +26,15 @@
 //		output.clear();
 //		for (float yi : y)
 //		{
-//			float ys = 1.0f / (1.0f + expf(-yi));//sigmodº¯Êý
+//			float ys = 1.0f / (1.0f + expf(-yi));//sigmodï¿½ï¿½ï¿½ï¿½
 //			output.push_back(ys);
 //		}
-//		return output;//·µ»ØÁ½¸öysÖµ
+//		return output;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ysÖµ
 //	}
 //	/// <summary>
-//	/// ·µ»ØdyÖµ
+//	/// ï¿½ï¿½ï¿½ï¿½dyÖµ
 //	/// </summary>
-//	/// <param name="loss">ËðÊ§Öµ£¬Ñù±¾yÖµ¼õÈ¥ys</param>
+//	/// <param name="loss">ï¿½ï¿½Ê§Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½yÖµï¿½ï¿½È¥ys</param>
 //	/// <returns></returns>
 //	virtual vector<float> Backward(vector<float> dy)
 //	{
@@ -63,11 +63,11 @@
 //{
 //public:
 //	/// <summary>
-//	/// ¹¹Ôìº¯Êý£¬³õÊ¼»¯wºÍbµÄÖµ£¨aºÍbµÄÖµ£©
+//	/// ï¿½ï¿½ï¿½ìº¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½wï¿½ï¿½bï¿½ï¿½Öµï¿½ï¿½aï¿½ï¿½bï¿½ï¿½Öµï¿½ï¿½
 //	/// </summary>
 //	/// <param name="ninp"></param>
 //	/// <param name="n"></param>
-//	FullConnect(int ninp/*ÊäÈë¸öÊý*/, int n/*Éñ¾­Ôª¸öÊý*/)
+//	FullConnect(int ninp/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/, int n/*ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½*/)
 //	{
 //		w.resize(ninp * n);
 //		b.resize(n);
@@ -86,7 +86,7 @@
 //
 //	virtual vector<float> Forward(vector<float> x)
 //	{
-//		samplex = x;//½«sampleÖÐµÄxÖµ´æ´¢ÆðÀ´
+//		samplex = x;//ï¿½ï¿½sampleï¿½Ðµï¿½xÖµï¿½æ´¢ï¿½ï¿½ï¿½ï¿½
 //		vector<float> y;
 //		for (int i = 0; i < n; i++)
 //		{
@@ -98,7 +98,7 @@
 //			v += b[i];
 //			y.push_back(v);
 //		}
-//		return y;//·µ»Øfloat y = w1 * sample.x1 + w2 * sample.x2 +b
+//		return y;//ï¿½ï¿½ï¿½ï¿½float y = w1 * sample.x1 + w2 * sample.x2 +b
 //	}
 //
 //	virtual vector<float> Backward(vector<float> dy)

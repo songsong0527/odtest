@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>D:\nvxlib\api;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\nvxlib\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\nvx\api;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\nvx\run\w;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -148,6 +148,7 @@
     <ClCompile Include="神经网络07-库函数调用.cpp" />
     <ClCompile Include="神经网络08-手撕bp神经网络.cpp" />
     <ClCompile Include="神经网络09-动物分类练习.cpp" />
+    <ClCompile Include="神经网络10-二维图像坐标提取.cpp" />
     <ClCompile Include="赋值运算符重载.cpp" />
     <ClCompile Include="递增运算符重载.cpp" />
     <ClCompile Include="面向对象多态01.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="神经网络07-头文件.hpp" />
     <ClInclude Include="神经网络08-头文件.hpp" />
     <ClInclude Include="神经网络09-头文件.hpp" />
+    <ClInclude Include="神经网络10-头文件.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,7 +2,7 @@
 //#include <vector>
 //#include <random>
 //#include "nvx.h"
-//#include"神经网络08-头文件.hpp"
+//#include "神经网络08-头文件.hpp"
 //
 //#pragma warning(disable:4996)
 //using namespace std;
@@ -26,9 +26,9 @@
 //
 //
 //	Layer* layer1 = new FullConnect(28 * 28, 30);
-//	Layer* layer2 = new ReLu();
+//	Layer* layer2 = new Relu();
 //	Layer* layer3 = new FullConnect(30, 20);
-//	Layer* layer4 = new ReLu();
+//	Layer* layer4 = new Relu();
 //	Layer* layer5 = new FullConnect(20, 10);
 //	Layer* layer6 = new Sigmoid();
 //	int avgcout = 0;

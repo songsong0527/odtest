@@ -93,6 +93,9 @@
     <ClCompile Include="神经网络09-动物分类练习.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="神经网络10-二维图像坐标提取.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="神经网络03-头文件.hpp">
@@ -111,6 +114,9 @@
       <Filter>源文件</Filter>
     </ClInclude>
     <ClInclude Include="神经网络09-头文件.hpp">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="神经网络10-头文件.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
